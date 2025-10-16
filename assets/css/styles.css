@@ -1173,3 +1173,164 @@ body {
         position: static;
     }
 }
+
+/* ===== STYLES RESPONSIVES POUR LES PAGES EXISTANTES ===== */
+
+/* Container principal responsive */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+/* Grilles responsives */
+.sections-grid,
+.produits-grid,
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Cartes responsives */
+.section-card,
+.produit-card,
+.feature-card {
+    width: 100%;
+    min-height: 200px;
+}
+
+/* Breadcrumb responsive */
+.breadcrumb {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+/* Layout produit responsive */
+.produit-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.produit-navigation {
+    order: 2;
+}
+
+.produit-detail {
+    order: 1;
+}
+
+/* Navigation latérale sticky */
+@media (min-width: 1024px) {
+    .produit-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+    
+    .produit-navigation {
+        position: sticky;
+        top: 120px;
+        align-self: start;
+        order: 2;
+    }
+    
+    .produit-detail {
+        order: 1;
+    }
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    .sections-grid,
+    .produits-grid,
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .sections-grid,
+    .produits-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .section-card,
+    .produit-card,
+    .feature-card {
+        padding: 1rem;
+    }
+    
+    .breadcrumb {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .breadcrumb-separator {
+        display: none;
+    }
+    
+    .family-badge {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+    .main-content {
+        padding: 0.75rem;
+    }
+    
+    .section-card,
+    .produit-card,
+    .feature-card {
+        padding: 0.75rem;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .btn-hero,
+    .btn-hero-secondary {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+}
+
+/* Amélioration de l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    .circular-track {
+        animation: none;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Support des écrans très larges */
+@media (min-width: 1600px) {
+    .main-content {
+        max-width: 1400px;
+    }
+}
