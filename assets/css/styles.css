@@ -1130,3 +1130,46 @@ body {
         padding: 1rem;
     }
 }
+
+/* Correction du layout des pages produit */
+.produit-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.produit-detail {
+    grid-column: 1;
+    order: 1;
+}
+
+.produit-navigation {
+    grid-column: 2;
+    order: 2;
+    position: sticky;
+    top: 2rem;
+}
+
+/* Assurer que le contenu principal est à gauche */
+.produit-content {
+    width: 100%;
+}
+
+/* Pour mobile : empiler verticalement */
+@media (max-width: 768px) {
+    .produit-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .produit-detail, .produit-navigation {
+        grid-column: 1;
+    }
+    .produit-detail {
+        order: 1;
+    }
+    .produit-navigation {
+        order: 2;
+        position: static;
+    }
+}
